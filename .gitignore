@@ -1,0 +1,11 @@
+/build/
+
+!gradle-wrapper.jar
+
+gradpe-app.settings
+
+.gradletasknamecache
+
+.idea/
+out/
+.gradle
