@@ -9,3 +9,6 @@ gradpe-app.settings
 .idea/
 out/
 .gradle
+
+
+*.log
