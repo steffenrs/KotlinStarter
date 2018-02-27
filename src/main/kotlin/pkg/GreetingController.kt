@@ -11,7 +11,7 @@ private val logger = KotlinLogging.logger {}
 
 
 @RestController
-class GreetingController {
+class GreetingController(private val repo: DefaultUserRepository) {
 
     val counter = AtomicLong()
 
@@ -20,6 +20,13 @@ class GreetingController {
         logger.info { "Greeting called, called before: {}"  }
         logger.info("Greeting called, num: {}", counter.get())
         return Greeting(counter.incrementAndGet(), "Hello, $name")
+    }
+
+    @GetMapping("/greeting/db")
+    fun greetingDb() : String {
+
+        repo.create(User(1, "Steffen"))
+        return "ok"
     }
 
 }

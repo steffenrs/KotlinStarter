@@ -22,14 +22,23 @@ jar {
 
 repositories {
     jcenter()
+
+    maven {
+        url  "https://dl.bintray.com/kotlin/exposed"
+    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile("org.springframework.boot:spring-boot-starter-jdbc") // jdbc
     compile 'io.github.microutils:kotlin-logging:1.4.9'
     compile 'com.natpryce:konfig:1.6.1.0'
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version" // trengs p.g.a konfig
+
+    compile 'org.jetbrains.exposed:exposed:0.10.1'
+    compile 'org.jetbrains.exposed:spring-transaction:0.10.1'
+    compile("org.postgresql:postgresql:9.4.1208")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
