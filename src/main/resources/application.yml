@@ -1,0 +1,15 @@
+server:
+  port: 8092
+
+logging:
+  file: myapp.log
+
+
+spring:
+  application:
+    name: cruncher
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://0.0.0.0:5432/test
+    username: postgres
+    password:
