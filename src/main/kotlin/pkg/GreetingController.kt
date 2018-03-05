@@ -23,10 +23,8 @@ class GreetingController(private val repo: DefaultUserRepository) {
     }
 
     @GetMapping("/greeting/db")
-    fun greetingDb() : String {
-
-        repo.create(User(1, "Steffen"))
-        return "ok"
+    fun greetingDb() : List<User> {
+        return repo.findAll()
     }
 
 }
